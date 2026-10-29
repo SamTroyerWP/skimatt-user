@@ -1,0 +1,100 @@
+{
+  "expo": {
+    "name": "Skimatt",
+    "slug": "skimatt-user",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/sm-icon-small.png",
+    "backgroundColor": "#c9604f",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/sm-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#c9604f"
+    },
+    "scheme": [
+      "skimatt-user"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "usesAppleSignIn": true,
+      "buildNumber": "1",
+      "config": {
+        "googleMapsApiKey": "AIzaSyB4dfNSF-cCF1wc9Hv_f-rEvJUOG0sSuaU"
+      },
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Skimatt uses your photo library so you can choose a profile picture. For example, select a personal photo to display on your Profile Settings page.",
+        "NSPhotoLibraryAddUsageDescription": "Skimatt may save images you create in the app, such as a cropped profile photo, back to your photo library.",
+        "NSCameraUsageDescription": "Skimatt uses the camera so you can take a new profile picture for your account.",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.publicservicetelevision.skimatt-user"
+    },
+    "android": {
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/sm-icon-small.png",
+        "backgroundColor": "#c9604f"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB4dfNSF-cCF1wc9Hv_f-rEvJUOG0sSuaU"
+        }
+      },
+      "package": "com.publicservicetelevision.skimatt_user"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Skimatt uses your location to show passes near you on the map."
+        }
+      ],
+      "react-native-email-link",
+      "expo-apple-authentication",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36,
+            "versionCode": 1,
+            "buildToolsVersion": "36.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "15.1"
+          }
+        }
+      ],
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.publicservicetelevision.yogamatt",
+          "enableGooglePay": true
+        }
+      ],
+      "expo-font",
+      "expo-web-browser",
+      "@react-native-community/datetimepicker",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Skimatt uses your photo library so you can choose a profile picture. For example, select a personal photo to display on your Profile Settings page.",
+          "cameraPermission": "Skimatt uses the camera so you can take a new profile picture for your account."
+        }
+      ]
+    ],
+    "owner": "samtroyerwp",
+    "extra": {
+      "eas": {
+        "projectId": "10508a41-d175-4a4d-8b07-6d12a2ff093b"
+      }
+    }
+  }
+}
