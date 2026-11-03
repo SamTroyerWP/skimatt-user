@@ -221,9 +221,11 @@ export default function EnterPhone({ navigation, route }) {
   };
 
   const verifyCode = async () => {
+    const expected = String(otpCode || verificationCodeRef.current || '').trim();
+    const entered = String(pinCode || '').replace(/\D/g, '');
     const data = {
-      otpCode: otpCode || String(verificationCodeRef.current || ''),
-      pinCode: Number(pinCode),
+      otpCode: expected,
+      pinCode: entered,
     };
 
     try {
