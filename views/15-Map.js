@@ -1392,7 +1392,8 @@ export default function Map({ navigation }) {
           </Modal>
         )}
             <View style={styles.titleContainer}>
-              <MyText title={`Skimatt`} style={styles.ymTitle} h1 />
+            <Image style={styles.skimattLogo} source={require('../img/skimatt logo.png')} />
+              {/* <MyText title={`Skimatt`} style={styles.ymTitle} h1 /> */}
               <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                 <Image style={styles.profileIcon} source={userData.profileImage ? { uri: userData.profileImage } : require ('../img/profile-user.png')} />
               </TouchableOpacity>
@@ -1412,7 +1413,7 @@ export default function Map({ navigation }) {
               style={styles.locationButtonContainer}
               onPress={handleResetRegion}
             >
-              <FontAwesomeIcon icon={faLocationCrosshairs} size={32} backgroundColor='transparent' />
+              <FontAwesomeIcon icon={faLocationCrosshairs} size={32} backgroundColor='transparent' color='#c12818' />
               <Text style={styles.yourLocationText}>Your Location</Text>
             </TouchableOpacity>
       
@@ -1762,7 +1763,7 @@ export default function Map({ navigation }) {
               <View style={styles.bottomBarContainer}>
                 <TouchableOpacity style={styles.backButtonMap} onPress={() => navigation.navigate("Profile")}>
                   <View style={styles.buttonContents}>
-                      <FontAwesomeIcon icon={faArrowLeft} />
+                      <FontAwesomeIcon icon={faArrowLeft} size={32} fontWeight='bold' color='#fff0e0'/>
                   </View>
                 </TouchableOpacity>
             {userData ?
@@ -1773,7 +1774,7 @@ export default function Map({ navigation }) {
                   fetchUserBookings();
                 }}
               >
-                <Text style={styles.bookItText}>Show Current Bookings</Text>
+                <Text style={styles.showBookingsText}>Show Current Bookings</Text>
               </TouchableOpacity>
             : 
               <MyText title={`Enjoy the Skimatt Map!`} style={styles.bottomBarText} bold />
@@ -1822,10 +1823,12 @@ const styles = StyleSheet.create({
       minHeight: 200,
     },
     profileIcon: {
+        paddingTop: 10,
         height: 70,
         width: 70,
         margin: 10,
-        borderRadius: 50
+        borderRadius: 50,
+        backgroundColor: '#fff0e0',
     },
     titleContainer: {
         paddingTop: 30,
@@ -1834,8 +1837,16 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#ffebd6',
+        backgroundColor: '#c12818',
                 
+    },
+
+    skimattLogo: {
+      alignSelf: 'center',
+      width: 220,
+      height: 120,
+      resizeMode: 'contain',
+      marginBottom: 8,
     },
         
     ymTitle: {
@@ -1884,13 +1895,15 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'row',
-        color: '#7F5345',
-        backgroundColor: '#e8987c',
+        color: '#fff0e0',
+        backgroundColor: '#c12818',
         height: 50,
         fontWeight: 600,
         borderRadius: 50,
         width: 50,
-        padding: 20,
+        borderWidth: 4,
+        borderColor: '#fff0e0',
+        padding: 5,
     },
 
     bottomBarText: {
@@ -1968,8 +1981,11 @@ const styles = StyleSheet.create({
     bookItButton: {
       alignItems: 'center',
       alignSelf: 'center',
-      backgroundColor: '#e8987c',
+      backgroundColor: '#fff0e0',
+      color: '#c12818',
       borderRadius: 20,
+      borderWidth: 3,
+      borderColor: '#c12818',
       marginHorizontal: 12,
       paddingVertical: 5,
       marginTop: 2,
@@ -1979,15 +1995,24 @@ const styles = StyleSheet.create({
   bookItText: {
       fontFamily: 'americanTypewriterBold',
       textAlign: 'center',
-      fontSize: 15
+      fontSize: 15,
+      color: '#c12818',
 
   },
+
+  showBookingsText: {
+    fontFamily: 'americanTypewriterBold',
+    textAlign: 'center',
+    fontSize: 15,
+    color: '#fff0e0',
+
+},
 
   calloutTextContainer: {
     borderColor: '#c12818',
     borderWidth: CALLOUT_PINK_BORDER,
     borderRadius: 10,
-    backgroundColor: 'white',
+    backgroundColor: '#fff0e0',
     padding: 5,
     elevation: 2,
     alignItems: 'center',
@@ -2175,13 +2200,13 @@ const styles = StyleSheet.create({
   },
 
   submitButton: {
-    backgroundColor: '#e8987c',
+    color: '#7F5345',
+    backgroundColor: '#fff0e0',
     paddingVertical: 10,
-    borderRadius: 10,
-    borderColor: '#000',
-    borderWidth: 2,
-    borderRadius: 30,
+    borderRadius: 50,
     position: 'absolute',
+    borderColor: '#c12818',
+    borderWidth: 3,
     width: 100,
     marginTop: 90,
     marginHorizontal: 150,
@@ -2189,11 +2214,12 @@ const styles = StyleSheet.create({
   },
 
   showBookingsButton: {
-    backgroundColor: '#e8987c',
+    backgroundColor: '#c12818',
     paddingVertical: 10,
+    color: '#fff0e0',
     borderRadius: 10,
-    borderColor: '#000',
-    borderWidth: 2,
+    borderColor: '#fff0e0',
+    borderWidth: 3,
     borderRadius: 30,
     width: 200,
     alignItems: 'center',
@@ -2202,9 +2228,10 @@ const styles = StyleSheet.create({
   },
 
   locationButtonContainer: {
-      backgroundColor: '#e8987c',
-      borderColor: '#000',
-      borderWidth: 2,
+      backgroundColor: '#fff0e0',
+      color: '#7F5345',
+      borderColor: '#c12818',
+      borderWidth: 3,
       borderRadius: 50,
       position: 'absolute',
       padding: 8,
@@ -2215,6 +2242,7 @@ const styles = StyleSheet.create({
   },
 
   yourLocationText: {
+    color: '#c12818',
     fontFamily: 'americanTypewriterBold',
     textAlign: 'center',
     fontSize: 12,

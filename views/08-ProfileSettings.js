@@ -581,9 +581,11 @@ export default function ProfileSettings({ navigation }) {
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
         <ActivityIndicator animating={loading} style={loading ? styles.loading : styles.hide} size="large" />
+        <View style={styles.titleContainer}>
 
         <Image style={styles.skimattLogo} source={require('../img/skimatt logo.png')} />
         <MyText title={'Skier'} style={styles.teacherStudio} h3/>
+        </View>
         <View style={styles.userHeader}>
           <UploadImage id={userData._id} image={userData.profileImage ? userData.profileImage : undefined} />
           <View style={styles.userInfoContainer}>
@@ -764,8 +766,7 @@ export default function ProfileSettings({ navigation }) {
 
 const styles = StyleSheet.create({
   skimattLogo: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignSelf: 'center',
     width: 220,
     height: 120,
     resizeMode: 'contain',
@@ -857,6 +858,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
 
+  titleContainer: {
+    paddingTop: 30,
+    display: 'flex',
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#c12818',
+            
+},
+
 
   paymentMethodsContainer: {
     margin: 20,
@@ -865,7 +877,7 @@ const styles = StyleSheet.create({
   paymentMethodsTitle: {
     fontFamily: 'americanTypewriterBold',
     fontSize: 20,
-    marginBottom: 10,
+    marginVertical: 10,
     color: '#c12818'
   },
   paymentOption: {

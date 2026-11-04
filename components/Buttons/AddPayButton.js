@@ -22,10 +22,12 @@ const styles = StyleSheet.create({
     },
     addPaymentButton: {
         color: '#7F5345',
-        backgroundColor: '#e8987c',
+        backgroundColor: '#fff0e0',
         height: 60,
         fontSize: 25,
         fontWeight: 'normal',
+        borderColor: '#c12818',
+        borderWidth: 3,
         borderRadius: 50,
         padding: 15
 
@@ -33,6 +35,7 @@ const styles = StyleSheet.create({
     addPaymentButtonText: {
         textAlign: 'center',
         alignItems: 'center',
+        color: '#c12818',
         fontSize: 20,
         fontWeight: 'normal',
         fontFamily: 'americanTypewriter'
