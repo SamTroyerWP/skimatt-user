@@ -279,7 +279,7 @@ export default function EnterApp() {
       <ActivityIndicator animating={loading} style={loading ? styles.loading : styles.hide} size="large" />
        <Image style={styles.skimattLogo} source={require('../img/skimatt logo.png')} />
         <MyText title={'Skier'} style={styles.yogi} h3/>
-        <MyText title={'guest'} style={styles.teacherStudio} h3/>
+        <MyText title={'(guest)'} style={styles.teacherStudio} h3/>
       <View style={styles.enterInfoContainer}>
         <MyText title={'Login '} style={styles.h3} h3 />
         <MyText title={'Enter your email'} style={styles.fieldTitle} />
@@ -389,8 +389,7 @@ export default function EnterApp() {
 
 const styles = StyleSheet.create({
   skimattLogo: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignSelf: 'center',
     width: 220,
     height: 120,
     resizeMode: 'contain',
@@ -401,7 +400,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   titleContainerNum: {
-    paddingTop: hp('10%'),
+    paddingVertical: hp('10%'),
     margin: 0,
     flex: 1,
     padding: 40,

@@ -14,21 +14,24 @@ import NavigationContext from '../context/NavigationContext';
 import { useChat } from '../context/ChatContext';
 import { supabase } from '../lib/supabase'; // adjust path as needed
 import { shareListingFromToken } from '../utils/classShare';
-import manhattanStudios from '../data/manhattanStudios.json';
+// import manhattanStudios from '../data/manhattanStudios.json';
 
-const studioMarkers = manhattanStudios.map((studio) => ({
-  _id: String(studio.id),
-  name: studio.name,
-  address: studio.address,
-  latitude: studio.latitude,
-  longitude: studio.longitude,
-  website: studio.website || '',
-}));
+// const studioMarkers = manhattanStudios.map((studio) => ({
+//   _id: String(studio.id),
+//   name: studio.name,
+//   address: studio.address,
+//   latitude: studio.latitude,
+//   longitude: studio.longitude,
+//   website: studio.website || '',
+// }));
 
 const { width, height } = Dimensions.get('window');
 /**
- * Custom marker size — **iOS only** (scaled `Image` + padding).
- * **Android** uses native `Marker` `image` (full bitmap, no RN view snapshot) so pins are not clipped to a “top-left sliver”.
+ * iOS draws a sized `Image` inside the marker (`MAP_PIN_ICON`).
+ * Android custom-view markers snapshot as a blank/sliver, so Android uses the
+ * native `Marker` `image` instead. Those bitmaps are the `*-android.png`
+ * files (144px, about 1.5× the previous pin). Google Maps draws them at their
+ * pixel size; the original 1200px art covered a large part of the screen.
  *
  * Snapshot padding (iOS): `MAP_PIN_SNAPSHOT_GUARD` on top + sides; `MAP_PIN_SNAPSHOT_BOTTOM_EXTRA` under the icon for the tip.
  */
@@ -124,6 +127,9 @@ const resolveMapCoordinates = async () => {
 const MAP_ICON_MEMBERSHIP = require('../img/ym-mapicon-purple.png');
 const MAP_ICON_RETREAT = require('../img/ym-mapicon-green.png');
 const MAP_ICON_CLASS = require('../img/ym-mapicon-pink.png');
+const MAP_ICON_MEMBERSHIP_ANDROID = require('../img/ym-mapicon-purple-android.png');
+const MAP_ICON_RETREAT_ANDROID = require('../img/ym-mapicon-green-android.png');
+const MAP_ICON_CLASS_ANDROID = require('../img/ym-mapicon-pink-android.png');
 
 const MAP_PIN_MARKER_STYLES = StyleSheet.create({
   mapPinMarkerHit: {
@@ -1304,11 +1310,17 @@ export default function Map({ navigation }) {
         longitude: parseFloat(marker.longitude),
       };
       if (Platform.OS === 'android') {
+        const androidIcon =
+          kind === 'Membership'
+            ? MAP_ICON_MEMBERSHIP_ANDROID
+            : kind === 'Retreat'
+              ? MAP_ICON_RETREAT_ANDROID
+              : MAP_ICON_CLASS_ANDROID;
         return (
           <Marker
             key={marker._id}
             coordinate={coord}
-            image={iconSource}
+            image={androidIcon}
             anchor={{ x: 0.5, y: 1 }}
             onPress={() => onMapPinPress(kind, marker)}
           />
@@ -1554,12 +1566,12 @@ export default function Map({ navigation }) {
                             // Add custom styling to the marker here
                           />
                     )}
-                  {studioMarkers.map((marker) => {
+                  {/* {studioMarkers.map((marker) => {
                     if (parseFloat(marker.latitude) && parseFloat(marker.longitude)) {
                       return renderMapPinMarker(marker, 'Studio', MAP_ICON_CLASS);
                     }
                     return null;
-                  })}
+                  })} */}
 
                   {(mapMarkerFilter === null || mapMarkerFilter === 'membership') &&
                     membershipsMarkers.map((marker) => {
@@ -2150,7 +2162,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: '5%',
     marginBottom: 10,
-    color: '#c12818',
+    color: '#ffebd6',
     backgroundColor: '#c12818',
     borderRadius: 30,
     width: 300,
