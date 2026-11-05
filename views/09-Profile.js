@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
       // marginLeft: -30,
   },
   titleContainerNumBackground: {
-      paddingVertical: 10,
+      paddingTop: 10,
       display: 'flex',
       width: '100%',
       flexDirection: 'column',
@@ -520,7 +520,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 30,
+    marginTop: 10,
 
   },
 

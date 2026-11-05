@@ -766,7 +766,6 @@ export default function ProfileSettings({ navigation }) {
 
 const styles = StyleSheet.create({
   skimattLogo: {
-    alignSelf: 'center',
     width: 220,
     height: 120,
     resizeMode: 'contain',
@@ -799,6 +798,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
     marginTop: 20,
+    marginLeft: 20,
   },
   userInfoContainer: {
     flex: 1,
@@ -853,6 +853,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#c12818',
     height: 70,
     textAlign: 'left',
+    alignItems: 'center',
     paddingLeft: 20,
     justifyContent: 'space-between'
   },
@@ -861,9 +862,8 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     display: 'flex',
     flexDirection: 'row',
-    paddingHorizontal: 20,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     backgroundColor: '#c12818',
             
 },
@@ -871,7 +871,7 @@ const styles = StyleSheet.create({
 
   paymentMethodsContainer: {
     margin: 20,
-    marginTop: 0
+    marginTop: 10
   },
   paymentMethodsTitle: {
     fontFamily: 'americanTypewriterBold',
@@ -911,6 +911,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 10,
+    marginHorizontal: 20,
   },
   typeClasses: {
     marginLeft: 10,
@@ -927,6 +928,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'row',
+    marginLeft: 20,
   },
 
   optionDots: {

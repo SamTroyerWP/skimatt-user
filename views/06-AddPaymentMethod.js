@@ -102,7 +102,9 @@ export default function AddPaymentMethod({ navigation }) {
     return (
 
         <View style={styles.titleContainerNum}>
-            <Image style={styles.skimattLogo} source={require('../img/skimatt logo.png')} />
+            <View style={styles.titleContainer}>
+                <Image style={styles.skimattLogo} source={require('../img/skimatt logo.png')} />
+            </View>
             <MyText title={`Add Payment Method`} style={styles.addPaymentTitle} h2 />
             <View style={styles.paymentOptionsContainer}>
                 <View style={styles.paymentOption}>
@@ -133,7 +135,7 @@ export default function AddPaymentMethod({ navigation }) {
                 <TouchableOpacity style={styles.nextButton} onPress={() => handleSubmit()}>
                     <View style={styles.buttonContents}>
                         <Text style={styles.buttonText}>next</Text>
-                        <FontAwesomeIcon icon={faArrowRight} size={22} style={styles.arrowIcons} />
+                        <FontAwesomeIcon icon={faArrowRight} size={22} style={styles.arrowIcons} color="#ffebd6" />
                     </View>
                 </TouchableOpacity>
             </View> 
@@ -157,8 +159,17 @@ const styles = StyleSheet.create({
         margin: 0,
         flex: 1,
         padding: 40,
-        backgroundColor: '#ffebd6',
+        backgroundColor: '#c12818',
     },
+    titleContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#c12818',
+            
+},
    
     h1: {
         fontSize: 65,
@@ -172,7 +183,7 @@ const styles = StyleSheet.create({
         fontFamily: 'bebesNeue',
         paddingVertical: 20,
         color: '#c12818',
-        backgroundColor: '#c12818',
+        backgroundColor: '#ffebd6',
         height: 70,
         alignContent: 'center',
         marginHorizontal: -40,
@@ -237,17 +248,20 @@ const styles = StyleSheet.create({
     buttonText: {
         margin: 0,
         textAlign: 'center',
-        padding: 15,
+        padding: 10,
+        color: '#ffebd6',
         fontSize: 25,
         fontWeight: 'normal',
         fontFamily: 'effortless'
     },
     nextButton: {
-        color: '#7F5345',
-        backgroundColor: '#e8987c',
+        color: '#ffebd6',
+        backgroundColor: '#c12818',
         height: 50,
         fontWeight: 'normal',
         borderRadius: 50,
+        borderWidth: 3,
+        borderColor: '#ffebd6',
         width: 150,
         paddingHorizontal: 20,
         justifyContent: 'space-between'
@@ -289,7 +303,7 @@ const styles = StyleSheet.create({
     paymentOptionTitle: {
         textAlign: 'left',
         marginHorizontal: 20,
-        color: '#c12818',
+        color: '#ffebd6',
         fontSize: 20
     },
 

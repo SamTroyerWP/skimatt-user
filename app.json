@@ -45,7 +45,7 @@
           "protonmail"
         ]
       },
-      "bundleIdentifier": "com.publicservicetelevision.skimatt-user"
+      "bundleIdentifier": "com.publicservicetelevision.skimatt"
     },
     "android": {
       "versionCode": 1,

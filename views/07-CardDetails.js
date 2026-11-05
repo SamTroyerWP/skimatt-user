@@ -352,14 +352,16 @@ export default function CardDetails({ route, navigation }) {
             showsVerticalScrollIndicator={false}
         >
         <View style={styles.titleContainerNum}>
-            <Image style={styles.skimattLogo} source={require('../img/skimatt logo.png')} />
+            <View style={styles.titleContainer}>
+                <Image style={styles.skimattLogo} source={require('../img/skimatt logo.png')} />
+            </View>
             <MyText title={`Enter Card Details`} style={styles.addPaymentTitle} h2 />
             <MyText title={'Name on Card'} style={styles.h3} h3 />
                 <View style={styles.cardContainer}>
                     <TextInput
                         style={styles.cardInput}
                         placeholder='Enter name as it appears on your card'
-                        placeholderTextColor='#e8987c'
+                        placeholderTextColor='#FDFDFD'
                         textContentType={Platform.OS === 'ios' ? 'creditCardName' : 'name'}
                         autoComplete={Platform.OS === 'android' ? 'cc-name' : 'name'}
                         importantForAutofill='yes'
@@ -381,8 +383,8 @@ export default function CardDetails({ route, navigation }) {
                                 postalCode: 'ZIP / Postal code',
                             }}
                             cardStyle={{
-                                textColor: '#c12818',
-                                placeholderColor: '#A88168',
+                                textColor: '#ffebd6',
+                                placeholderColor: '#FDFDFD',
                                 borderRadius: 2,
                                 backgroundColor: '#c12818',
                             }}
@@ -442,7 +444,7 @@ export default function CardDetails({ route, navigation }) {
                         ) : (
                             <>
                                 <Text style={styles.buttonText}>next</Text>
-                                <FontAwesomeIcon icon={faArrowRight} size={22} style={styles.arrowIcons} />
+                                <FontAwesomeIcon icon={faArrowRight} size={22} style={styles.arrowIcons} color="#ffebd6" />
                             </>
                         )}
                     </View>
@@ -492,9 +494,17 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         padding: 40,
         paddingTop: 20,
-        backgroundColor: '#ffebd6',
+        backgroundColor: '#c12818',
     },
-   
+    
+    titleContainer: {
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+       
+    },
+    
     h1: {
         fontSize: 65,
         textAlign: 'center',
@@ -508,9 +518,10 @@ const styles = StyleSheet.create({
         fontFamily: 'bebesNeue',
         paddingVertical: 10,
         color: '#c12818',
-        backgroundColor: '#c12818',
+        backgroundColor: '#ffebd6',
         height: 50,
         alignContent: 'center',
+        alignItems: 'center',
         marginHorizontal: -40,
         paddingLeft: 30
     },
@@ -518,14 +529,14 @@ const styles = StyleSheet.create({
     h3: {
         textAlign:'left',
         paddingTop: 16,
-        color: '#c12818',
+        color: '#ffebd6',
     },
 
     h3Card: {
         textAlign: 'left',
         paddingTop: 18,
         marginBottom: 10,
-        color: '#c12818',
+        color: '#ffebd6',
     },
 
     h3Section: {
@@ -612,9 +623,10 @@ const styles = StyleSheet.create({
     buttonText: {
         margin: 0,
         textAlign: 'center',
-        padding: 15,
+        padding: 10,
         fontSize: 25,
         fontWeight: 'normal',
+        color: '#ffebd6',
         fontFamily: 'effortless'
     },
 
@@ -637,11 +649,13 @@ const styles = StyleSheet.create({
     },
 
     nextButton: {
-        color: '#7F5345',
-        backgroundColor: '#e8987c',
+        color: '#ffebd6',
+        backgroundColor: '#c12818',
         height: 50,
         fontWeight: 'normal',
         borderRadius: 50,
+        borderWidth: 3,
+        borderColor: '#ffebd6',
         width: 150,
         paddingHorizontal: 20,
         justifyContent: 'space-between'
@@ -652,6 +666,7 @@ const styles = StyleSheet.create({
     },
 
     cardContainerExpiryCvvText: {
+        color: '#ffebd6',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -666,10 +681,12 @@ const styles = StyleSheet.create({
     },
 
     cardContainer: {
-        borderWidth: 3,
+        borderWidth: 2,
         borderRadius: 6,
         marginVertical: 10,
-        borderColor: '#c12818',
+        color: '#c12818',
+        backgroundColor: '#ffebd6',
+        borderColor: '#ffebd6',
         overflow: 'hidden',
     },
 
@@ -685,24 +702,26 @@ const styles = StyleSheet.create({
 
     
     cardInput: {
-        backgroundColor: '#ffebd6',
+        backgroundColor: '#c12818',
         paddingHorizontal: 15,
-        color: '#c12818',
+        color: '#ffebd6',
+        borderWidth: 2,
+        borderColor: '#ffebd6',
         height: 50,
         borderRadius: 2,
         fontSize: 16
     },
 
     savedCardButton: {
-        backgroundColor: '#e8987c',
+        backgroundColor: '#c12818',
         borderRadius: 30,
         paddingVertical: 14,
         paddingHorizontal: 20,
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 4,
-        borderWidth: 2,
-        borderColor: '#68281B',
+        borderWidth: 3,
+        borderColor: '#ffebd6',
     },
 
     savedCardButtonDisabled: {
@@ -712,12 +731,12 @@ const styles = StyleSheet.create({
     savedCardButtonText: {
         fontFamily: 'bebesNeue',
         fontSize: 20,
-        color: '#c12818',
+        color: '#ffebd6',
         textAlign: 'center',
     },
 
     savedCardHint: {
-        color: '#c12818',
+        color: '#ffebd6',
         fontSize: 12,
         lineHeight: 16,
         marginTop: 6,
@@ -726,7 +745,7 @@ const styles = StyleSheet.create({
     },
 
     manualCardHint: {
-        color: '#c12818',
+        color: '#ffebd6',
         fontSize: 11,
         lineHeight: 14,
         marginTop: 2,
