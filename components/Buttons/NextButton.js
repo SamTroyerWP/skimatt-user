@@ -8,7 +8,7 @@ const NextButton = ({ navigation, handlePress }) => {
    <TouchableOpacity style={styles.nextButton} onPress={() => handlePress()}>
      <View style={styles.buttonContents}>
         <Text style={styles.buttonText}>next</Text>
-          <FontAwesomeIcon icon={faArrowRight} size={22} style={styles.arrowIcons} />
+          <FontAwesomeIcon icon={faArrowRight} size={22} color='#ffebd6' style={styles.arrowIcons} />
     </View>
    </TouchableOpacity>
 
@@ -17,14 +17,16 @@ const NextButton = ({ navigation, handlePress }) => {
 
 const styles = StyleSheet.create({
     nextButton: {
-        color: '#7F5345',
-        backgroundColor: '#e8987c',
+        color: '#ffebd6',
+        backgroundColor: '#c12818',
         height: 50,
         fontWeight: 'normal',
         borderRadius: 50,
         width: 150,
-        paddingHorizontal: 20,
-        justifyContent: 'space-between'
+        paddingHorizontal: 10,
+        justifyContent: 'space-between',
+        borderWidth: 3,
+        borderColor: '#ffebd6',
     },
     buttonContents: {
         display: 'flex',
@@ -36,8 +38,9 @@ const styles = StyleSheet.create({
     buttonText: {
         margin: 0,
         textAlign: 'center',
-        padding: 13,
+        padding: 10,
         fontSize: 25,
+        color: '#ffebd6',
         fontWeight: 'normal',
         fontFamily: 'effortless'
     },

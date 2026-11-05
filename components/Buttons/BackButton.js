@@ -15,7 +15,7 @@ const BackButton = ({ navigation, screenName, params }) => {
   return ( 
    <TouchableOpacity style={styles.backButton} onPress={handlePress}>
      <View style={styles.buttonContents}>
-      <FontAwesomeIcon icon={faArrowLeft} size={22} />
+      <FontAwesomeIcon icon={faArrowLeft} size={22} color='#ffebd6'/>
     </View>
    </TouchableOpacity>
 
@@ -25,13 +25,15 @@ const BackButton = ({ navigation, screenName, params }) => {
 const styles = StyleSheet.create({
     backButton: {
         color: '#7F5345',
-        backgroundColor: '#e8987c',
+        backgroundColor: '#c12818',
         height: 50,
         fontWeight: 600,
+        borderWidth: 3,
+        borderColor: '#ffebd6',
         borderRadius: 50,
         width: 50,
         alignItems: 'center',
-        padding: 15
+        padding: 10
     },
 
     buttonContents: {

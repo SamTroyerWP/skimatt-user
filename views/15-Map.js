@@ -1941,7 +1941,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-around', // Centers items in the container
       alignItems: 'center',     // Aligns items vertically in the center
       paddingHorizontal: 10,    // Optional: adds padding around the container
-      top: 580,
+      top: 570,
       position: 'absolute',
       zIndex: 10,
     },

@@ -16,17 +16,19 @@ const NavButton = ({ label, navigation, screenName }) => {
 
 const styles = StyleSheet.create({
     profileNavButton: {
-        color: '#7F5345',
-        backgroundColor: '#e8987c',
+        backgroundColor: '#c12818',
         height: 50,
         fontWeight: 'normal',
         borderRadius: 50,
         width: 150,
         marginHorizontal: 20,
+        borderWidth: 3,
+        borderColor: '#ffebd6',
     },
     
     profileNavButtonText: {
-        marginTop: 10,
+        marginVertical: 5,
+        color: '#ffebd6',
         textAlign: 'center',
         fontSize: 23,
         fontWeight: 'normal',

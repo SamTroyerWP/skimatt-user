@@ -227,8 +227,10 @@ export default function Profile({ navigation }) {
     <ScrollView style={styles.container}>
       <ActivityIndicator animating={loading} style={loading ? styles.loading : styles.hide} size="large" />
       <View style={styles.titleContainerNum}>
+        <View style={styles.titleContainerNumBackground} >
                 <Image style={styles.skimattLogo} source={require('../img/skimatt logo.png')} />
                 <MyText title={'Skier'} style={styles.teacherStudio} h3/>
+        </View>
         <View style={styles.userInfoContainer}>
           <View style={styles.userNameRatingContainer}>
             <MyText title={`${userData.firstName} ${userData.lastName}`} style={styles.userInfo} p />
@@ -245,7 +247,7 @@ export default function Profile({ navigation }) {
               <View style={styles.barsIconContainer}>
                 <Text style={styles.barsIconText}>Menu</Text>
                 <TouchableOpacity onPress={openTopModal}>
-                  <FontAwesomeIcon style={styles.barsIcon} size={40} color='#e8987c' icon={faBars} />
+                  <FontAwesomeIcon style={styles.barsIcon} size={40} color='#ffebd6' icon={faBars} />
                 </TouchableOpacity>
               </View>
             </View>
@@ -375,16 +377,23 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#ffebd6',
+    backgroundColor: '#c12818',
   },
   titleContainerNum: {
     margin: 0,
     alignItems: 'center',
     flex: 1,
-    padding: 40,
-    // marginLeft: -30,
-    marginTop: -30,
-    backgroundColor: '#ffebd6',
+      // marginLeft: -30,
+  },
+  titleContainerNumBackground: {
+      paddingVertical: 10,
+      display: 'flex',
+      width: '100%',
+      flexDirection: 'column',
+      paddingHorizontal: 20,
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      backgroundColor: '#c12818',
   },
 
     h1: {
@@ -397,8 +406,9 @@ const styles = StyleSheet.create({
     },
 
     teacherStudio: {
-      color: '#c12818',
+      color: '#ffebd6',
       textAlign: 'center',
+      marginTop: 10,
       fontFamily: 'effortless',
       fontSize: 28
     },
@@ -439,7 +449,7 @@ const styles = StyleSheet.create({
 
   button: {
     color: '#7F5345',
-    backgroundColor: '#e8987c',
+    backgroundColor: '#ffebd6',
     height: 50,
     fontSize: 25,
     fontWeight: 600,
@@ -450,8 +460,7 @@ const styles = StyleSheet.create({
   ymIconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 10,
-    marginTop: 20
+    marginVertical: 20
   },
 
   ymIcon: {
@@ -472,7 +481,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    width: '100%',
+    width: '90%',
 
   },
   profileIcon: {
@@ -512,12 +521,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: 30,
+
   },
 
   userInfo: {
     fontFamily: 'americanTypewriterBold',
     fontSize: 30,
-    color: '#c12818'
+    color: '#ffebd6'
   },
 
   userInfoContact: {
@@ -529,9 +539,9 @@ const styles = StyleSheet.create({
   currentlyShowingContainer: {
     display: 'flex',
     marginHorizontal: 20,
-    borderWidth: 1,
-    borderColor: '#c12818',
-    width: '100%',
+    borderWidth: 2,
+    borderColor: '#ffebd6',
+    width: '90%',
     height: 250
   },
 
@@ -539,7 +549,7 @@ const styles = StyleSheet.create({
     fontFamily: 'americanTypewriterBold',
     fontSize: 28,
     margin: 15,
-    color: '#c12818'
+    color: '#ffebd6'
   },
 
   profileNavContainer: {
@@ -575,7 +585,7 @@ const styles = StyleSheet.create({
     fontFamily: 'americanTypewriter',
     fontSize: 15,
     margin: 10,
-    color: '#c12818'
+    color: '#ffebd6'
   },
 
   methodModalContainer: {
